@@ -1,0 +1,12 @@
+version: '3'
+services:
+  calculator:
+    build: ./docker-sprint-boot
+    ports:
+    - "8085:8085"
+  displayresult:
+    build: ./call-api
+    ports:
+    - "8090:8090"
+    links:
+    - "calculator"
